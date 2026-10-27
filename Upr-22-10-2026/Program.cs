@@ -66,9 +66,24 @@
             double totalEur = totalBgn / 1.94;
 
             Console.WriteLine();
-            Console.WriteLine($"Общ приход в лева: {totalBgn:F2} лв.");
-            Console.WriteLine($"Общ приход в евро: {totalEur:F2} €");
+            Console.WriteLine($"Общ приход в лева: {totalBgn:c}");
+            Console.WriteLine($"Общ приход в евро: {totalEur:F2} Euro.");
 
+            //упражнение 5 - задача точка в равнината
+
+            Console.WriteLine("Enter point A coordinates (x y):");
+            Console.Write("x: ");
+            double x1 = double.Parse(Console.ReadLine());
+            Console.Write("y: ");
+            double y1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter point B coordinates (x y):");
+            Console.Write("x: ");
+            double x2 = double.Parse(Console.ReadLine());
+            Console.Write("y: ");
+            double y2 = double.Parse(Console.ReadLine());
+
+            double d = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
+            Console.WriteLine($"Разстоянието между точките е: {d:F2}");
 
         }
     }
