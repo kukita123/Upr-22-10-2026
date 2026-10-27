@@ -1,4 +1,6 @@
-﻿namespace Upr_22_10_2026
+﻿using System;
+
+namespace Upr_22_10_2026
 {
     internal class Program
     {
@@ -69,8 +71,60 @@
             Console.WriteLine($"Общ приход в лева: {totalBgn:c}");
             Console.WriteLine($"Общ приход в евро: {totalEur:F2} Euro.");
 
+            //Напишете програма, която чете температура в градуси по
+            //Фаренхайт (реално число) от
+            //конзолата, пресмята съответствието в Целзий и го извежда.
+
+            Console.WriteLine("\nТЕМПЕРАТУРЕН КОНВЕРТОР: ");
+            Console.Write("Въведете температура във Фаренхайт: ");
+            double fahrenheit = double.Parse(Console.ReadLine());
+
+            double celsius = (fahrenheit - 32) * 5 / 9.0;
+            int roundedCelsius = (int)celsius; // Явно кастване за отрязване на дробната част
+
+            Console.WriteLine($"{fahrenheit:F2}°F = {celsius:F2}°C");
+            Console.WriteLine($"Цяла стойност (закръглена): {roundedCelsius}°C");
+
+            //Напишете програма, която симулира касова бележка.
+            Console.WriteLine("КАСОВА БЕЛЕЖКА:");
+            Console.Write("\nИме на продукта: ");
+            string product = Console.ReadLine();
+
+            Console.Write("Единична цена: ");
+            double price = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Количество: ");
+            int quantity = int.Parse(Console.ReadLine());
+
+            Console.Write("Платена сума: ");
+            double paid = Convert.ToDouble(Console.ReadLine());
+
+            double totalSum = price * quantity;
+            double change = paid - totalSum;
+
+            Console.WriteLine("\n--- КАСОВА БЕЛЕЖКА ---");
+            Console.WriteLine($"Продукт: {product}");
+            Console.WriteLine($"Обща сума: {totalSum:C}");
+            Console.WriteLine($"Платено: {paid:C}");
+            Console.WriteLine($"Ресто: {change:C}");
+
+            //индекс на телесна маса
+            Console.WriteLine("\nИНДЕКС НА ТЕЛЕСНА МАСА:");
+            Console.Write("Въведете тегло в кг: ");
+            double weightKg = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Въведете височина в см: ");
+            int heightCm = int.Parse(Console.ReadLine());
+
+            double heightMeters = heightCm / 100.0;
+
+            double bmi = weightKg / (heightMeters * heightMeters);
+
+            Console.WriteLine($"BMI: {bmi:F1}");
+            Console.WriteLine($"Цяла част на BMI: {(int)bmi}");
             //упражнение 5 - задача точка в равнината
 
+            Console.WriteLine("РАЗСТОЯНИЕ МЕЖДУ ТОЧКИ В РАВНИНАТА: ");
             Console.WriteLine("Enter point A coordinates (x y):");
             Console.Write("x: ");
             double x1 = double.Parse(Console.ReadLine());
@@ -85,6 +139,7 @@
             double d = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
             Console.WriteLine($"Разстоянието между точките е: {d:F2}");
 
+            
         }
     }
 }
