@@ -122,9 +122,19 @@ namespace Upr_22_10_2026
 
             Console.WriteLine($"BMI: {bmi:F1}");
             Console.WriteLine($"Цяла част на BMI: {(int)bmi}");
+
+            //упражнение 5 - изчисляване окръжност
+            Console.WriteLine("\nИЗЧИСЛЯВАНЕ НА ОКРЪЖНОСТ");
+            Console.Write("Въведи радиус на окръност r = ");
+            double r = double.Parse(Console.ReadLine());
+            double perimeter = 2 * Math.PI * r;
+            double area = Math.PI * Math.Pow(r, 2);
+            Console.WriteLine($"Обиколка: { perimeter: F2}");
+            Console.WriteLine($" Лице: { area: F2}");
+
             //упражнение 5 - задача точка в равнината
 
-            Console.WriteLine("РАЗСТОЯНИЕ МЕЖДУ ТОЧКИ В РАВНИНАТА: ");
+            Console.WriteLine("\nРАЗСТОЯНИЕ МЕЖДУ ТОЧКИ В РАВНИНАТА: ");
             Console.WriteLine("Enter point A coordinates (x y):");
             Console.Write("x: ");
             double x1 = double.Parse(Console.ReadLine());
@@ -139,7 +149,25 @@ namespace Upr_22_10_2026
             double d = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
             Console.WriteLine($"Разстоянието между точките е: {d:F2}");
 
-            
+            //упражнение 5 - математически изрази
+            //израз 1:
+            Console.WriteLine("\nМАТЕМАТИЧЕСКИ ИЗРАЗИ:");
+            Console.Write("Въведи x = ");
+            double x = double.Parse(Console.ReadLine());
+            Console.Write("Въведи y = ");
+            double y = double.Parse(Console.ReadLine());
+            double z = Math.Abs(x - y) + Math.Sqrt(Math.Pow(x, 4) + Math.Abs(y));
+            Console.WriteLine($"Стойност на z = { z: F2}");
+
+            //израз 2:
+            double numerator = Math.Pow(x + y, 4);
+            double denominator = Math.Abs(x) + 1;
+            double D = numerator / denominator;
+            Console.WriteLine($"Стойност на D = { D: F2}");
+
+
+
+
         }
     }
 }
